@@ -1,0 +1,25 @@
+name: Dynamic List Example
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  dynamic_job:
+    runs-on: ubuntu-latest
+
+    inputs:
+      my_dynamic_list:
+        description: 'A dynamic list of values'
+        required: true
+
+    steps:
+      - name: Show Dynamic List
+        run: |
+          echo "Dynamic List: ${{ inputs.my_dynamic_list }}"
+jobs:
+  list_job:
+    runs-on: ubuntu-latest
+    with:
+      my_dynamic_list: 'mxdrcust1,mxdrcust2,mxdrcust3'
