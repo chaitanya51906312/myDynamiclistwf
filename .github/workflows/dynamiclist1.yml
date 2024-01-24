@@ -11,6 +11,7 @@ jobs:
         description: A dynamic list of values
         required: true
     steps:
+      - uses: actions/checkout@v4
       - name: Show Dynamic List
         run: |
           echo "Dynamic List: ${{ inputs.my_dynamic_list }}"
