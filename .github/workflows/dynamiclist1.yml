@@ -15,8 +15,4 @@ jobs:
       - name: Show Dynamic List
         run: |
           echo "Dynamic List: ${{ inputs.my_dynamic_list }}"
-  jobs: null
-  list_job:
-    runs-on: ubuntu-latest
-    with:
-      my_dynamic_list: mxdrcust1,mxdrcust2,mxdrcust3
+ 
