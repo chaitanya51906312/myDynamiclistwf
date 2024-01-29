@@ -1,18 +1,32 @@
-name: Dynamic List Example
+name: Process Customers Workflow
+
 on:
   push:
     branches:
       - main
+
 jobs:
-  dynamic_job:
+  process_customers:
     runs-on: ubuntu-latest
+
     inputs:
-      my_dynamic_list:
-        description: A dynamic list of values
+      customers:
+        description: 'Comma-separated list of customer names'
         required: true
+
+    env:
+      CUSTOMER_NAMES: ${{ inputs.customers }}
+
     steps:
-      - uses: actions/checkout@v4
-      - name: Show Dynamic List
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Process Customer Names
         run: |
-          echo "Dynamic List: ${{ inputs.my_dynamic_list }}"
+          IFS=',' read -ra CUSTOMER_ARRAY <<< "$CUSTOMER_NAMES"
+          for customer in "${CUSTOMER_ARRAY[@]}"; do
+            echo "Processing customer: $customer"
+            # Add your custom logic here
+          done
+
  
