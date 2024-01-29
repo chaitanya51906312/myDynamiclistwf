@@ -9,13 +9,12 @@ jobs:
   process_customers:
     runs-on: ubuntu-latest
 
-    inputs:
+inputs:
       customers:
         description: 'Comma-separated list of customer names'
         required: true
-
-    env:
-      CUSTOMER_NAMES: ${{ inputs.customers }}
+ env:
+  CUSTOMER_NAMES: ${{ inputs.customers }}
 
     steps:
       - name: Checkout Repository
