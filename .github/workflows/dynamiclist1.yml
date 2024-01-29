@@ -6,7 +6,8 @@ on:
       - main
 
 jobs:
-  process_customers:
+  my_first_job:
+    name: process_customers
     runs-on: ubuntu-latest
 
 inputs:
