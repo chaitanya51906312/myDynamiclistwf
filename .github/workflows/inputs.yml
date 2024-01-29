@@ -1,5 +1,8 @@
 name: 'My Action'
-on: ubuntu-latest
+on:
+  push:
+    branches:
+      - main
 description: 'An GitHub Action with inputs'
 inputs:
   customers:
