@@ -1,0 +1,8 @@
+name: 'My Action'
+on: ubuntu-latest
+description: 'An GitHub Action with inputs'
+inputs:
+  customers:
+    description: 'A custom input parameter'
+    required: true
+    default: 'default value'
